@@ -1,0 +1,305 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from signal import signal, SIGINT
+from sys import exit
+import os
+import time
+import urllib2
+import sys
+import getpass
+import commands
+from commands import getoutput
+from urllib2 import Request, urlopen, URLError, HTTPError
+import tldextract
+import random
+import validator_collection
+from validator_collection import validators, checkers, errors
+from user_agents import parse
+
+class bcolors:
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    RED = '\033[31m'
+    YELLOW = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    BGRED = '\033[41m'
+    WHITE = '\033[37m'
+    cyan='\033[36m'
+    lightgreen='\033[92m'
+    orange='\033[33m'
+    purple='\033[35m'
+
+
+
+def handler(signal_received, frame):
+    print bcolors.RED + bcolors.BOLD + "\nCTRL-C detected. Exiting gracefully" + bcolors.ENDC
+    exit(0)
+
+if __name__ == '__main__':
+    signal(SIGINT, handler)
+
+def agent():
+    
+    if os.path.exists('/usr/bin/berserk-config/user-agents.txt') == True:
+        pass
+    else:
+        sys.exit()
+    
+    with open('/usr/bin/berserk-config/user-agents.txt') as f:
+        agents = f.read().splitlines() 
+       
+    agent.user_agent = random.choice(agents)
+    headers={'User-Agent':agent.user_agent}
+    
+    return(headers)
+    
+    
+        
+        
+
+
+
+
+def sudo():
+    if not os.geteuid()==0:
+        sys.exit(bcolors.RED + bcolors.BOLD + "Sorry mate but I hate password promts, Use 'sudo'" + bcolors.ENDC)
+
+
+def logo():
+    
+    print bcolors.RED + bcolors.BOLD + r"""
+        
+▀█████████▄     ▄████████    ▄████████    ▄████████    ▄████████    ▄████████    ▄█   ▄█▄ 
+  ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███ ▄███▀ 
+  ███    ███   ███    █▀    ███    ███   ███    █▀    ███    █▀    ███    ███   ███▐██▀   
+ ▄███▄▄▄██▀   ▄███▄▄▄      ▄███▄▄▄▄██▀   ███         ▄███▄▄▄      ▄███▄▄▄▄██▀  ▄█████▀    
+▀▀███▀▀▀██▄  ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ▀███████████ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ▀▀█████▄    
+  ███    ██▄   ███    █▄  ▀███████████          ███   ███    █▄  ▀███████████   ███▐██▄   
+  ███    ███   ███    ███   ███    ███    ▄█    ███   ███    ███   ███    ███   ███ ▀███▄ 
+▄█████████▀    ██████████   ███    ███  ▄████████▀    ██████████   ███    ███   ███   ▀█▀ 
+                            ███    ███                             ███    ███   ▀         
+
+
+        """ + bcolors.ENDC
+    
+
+
+def usage():
+    
+    logo()
+    
+    print bcolors.GREEN + bcolors.BOLD + r"""
+
+	USAGE:
+         berserk start ----- (To start Berserk)
+         press Ctrl+c to exit.....
+    """ + bcolors.ENDC
+    sys.exit()
+
+
+
+privoxystring = ['forward-socks5 / 127.0.0.1:9050 .'] 
+torrstring = ['ControlPort 9051', 'CookieAuthentication 1']
+
+def pr():
+    
+    def prox():
+        proxy_support = urllib2.ProxyHandler({"https" : "127.0.0.1:8118"})
+        opener = urllib2.build_opener(proxy_support)
+        urllib2.install_opener(opener)
+
+    
+    prox()
+    tempp=urllib2.Request("https://www.google.com")
+    
+    try:
+        dommain = urllib2.urlopen(tempp)
+    except (URLError, HTTPError), f:
+		if hasattr(f, 'reason'):
+				print bcolors.RED + bcolors.BOLD + "I gues something's wrong with your 'torrc' File." + bcolors.ENDC
+				print " "
+				print bcolors.RED + bcolors.BOLD + "Comment the 'SOCKSPort' and an extra 'ControlPort' at '9050' in /etc/tor/torrc" + bcolors.ENDC
+				print ' '
+				print 'Reason: ', f.reason 
+				print ' '
+				sys.exit()
+		elif hasattr(f, 'code'):
+			 print bcolors.RED + bcolors.BOLD + 'The server couldn\'t fulfill the request.' + bcolors.ENDC
+			 print 'Error code: ', f.code
+			 print ' '
+			 sys.exit()
+              
+    else:
+		pass
+    
+    return 0
+
+
+
+
+def request(url):
+    
+    def proxy():
+        proxy_support = urllib2.ProxyHandler({"https" : "127.0.0.1:8118"})
+        opener = urllib2.build_opener(proxy_support)
+        urllib2.install_opener(opener)
+
+    
+    proxy()
+    request=urllib2.Request(url, None, agent())
+    return urllib2.urlopen(request).read()
+
+
+        
+
+def returnNotMatches(a, b):
+    a = set(a)
+    b = set(b)
+    return (a-b)
+
+
+
+class merge:
+    def changeip(self):
+      
+        self.urll = raw_input(bcolors.GREEN + bcolors.BOLD + "Enter The Url You want to Scrape('http' is out of my limits)" + ' ' + bcolors.ENDC) 
+        self.req = urllib2.Request(self.urll)
+        if checkers.is_url(self.urll)==False:
+            print " "
+            print bcolors.RED + bcolors.BOLD + self.urll + "!" + " Seriously, you gotta Double Your Dose Mate." + bcolors.ENDC
+            print " "
+            sys.exit()
+        else:
+            pass
+        try:
+            self.response = urllib2.urlopen(self.req)
+        except URLError, e:
+            if hasattr(e, 'reason'):
+                 print bcolors.RED + bcolors.BOLD + "We failed to reach a server." + bcolors.ENDC
+                 print 'Reason: ', e.reason
+                 sys.exit()
+            elif hasattr(e, 'code'):
+                 print bcolors.RED + bcolors.BOLD + "The server couldn't fulfill the request." + bcolors.ENDC
+                 print 'Error code: ', e.code
+                 sys.exit()
+            
+        else:
+             pass
+       
+
+    def domains(self):
+        
+        os.system("service tor reload")
+        list= tldextract.extract(self.urll)
+        Domain_Name= list.domain + '.' + list.suffix
+        
+        ip=request("https://ipinfo.io/ip")
+        request(self.urll)
+        os.system("service tor reload")
+        ua= parse(agent.user_agent)
+        print bcolors.BLUE + bcolors.BOLD + "["+str(x+1)+"]" + " Visiting" + " "  + " " + Domain_Name + " "  + "with an ip of"+ bcolors.ENDC + " " + bcolors.orange + ip + " " + bcolors.ENDC
+        print bcolors.cyan + bcolors.BOLD + "pretending to be " + bcolors.ENDC + bcolors.purple + bcolors.BOLD + str(ua) + bcolors.ENDC
+        print " "
+        return 0
+        
+    
+        
+def traffic():
+    
+             
+    try:
+        int(limits)
+        pass
+    except ValueError:
+       print " " 
+       print (bcolors.RED + bcolors.BOLD + " " + limits.upper() +  "!" + " " + " Are you out of your freakin mind???" + bcolors.ENDC)
+       print " "
+       sys.exit()
+    
+
+    return 0
+    
+    
+
+def configure():
+    
+    print " "
+    print bcolors.GREEN + bcolors.BOLD + "Configuring Torrc" + bcolors.ENDC 
+    time.sleep(0.4)
+    print bcolors.GREEN + bcolors.BOLD + "Configuring Privoxy Config" + bcolors.ENDC
+    time.sleep(0.4)
+    print bcolors.GREEN + bcolors.BOLD + "[Done]" + bcolors.ENDC
+    
+    with open('/etc/privoxy/config') as x:
+         verse = x.read().splitlines()
+            
+    with open('/etc/tor/torrc') as f:
+         lines = f.read().splitlines()
+    
+    
+    
+    try:
+        returnNotMatches(privoxystring, verse)!=set([])
+        MFile=open('/etc/privoxy/config','a')
+        for elementss in returnNotMatches(privoxystring,verse):
+            print >>MFile, elementss
+        MFile.close()
+    except:
+        pass
+    
+    
+                    
+    
+    if returnNotMatches(torrstring, lines)!=set([]):
+        MyFile=open('/etc/tor/torrc','a')
+        for element in returnNotMatches(torrstring,lines):
+            print >>MyFile, element
+        MyFile.close()
+
+    else:
+         pass
+           
+    os.system("sudo service tor restart")
+    os.system("sudo service privoxy restart")
+    
+    
+    
+
+s=merge() 
+
+arg = sys.argv[1:]
+
+if len(arg) != 1:
+    usage()
+elif sys.argv[1] == "start":
+    
+    sudo()
+    configure()
+    print " "
+    
+    s.changeip()
+    print " "
+    limits = raw_input(bcolors.GREEN + bcolors.BOLD + "Tell me how much of traffic You want to generate " + bcolors.ENDC)
+    traffic()
+    pr()
+    print " "
+    
+    try:
+        for x in range(int(limits)):
+            s.domains()
+        pass
+    except OverflowError:
+        print bcolors.RED + bcolors.BOLD + "You're way too greedy mate!" + bcolors.ENDC
+        print " "
+        print bcolors.RED + bcolors.BOLD + "run multiple instances if you want." + bcolors.ENDC
+        sys.exit()
+    except MemoryError:
+        print bcolors.RED + bcolors.BOLD +"You're way too far than I'm capable of!!" + bcolors.ENDC
+        print " "
+        print bcolors.RED + bcolors.BOLD + "Well, you can run multiple instances of me, though." + bcolors.ENDC
+        sys.exit()
+else:
+    usage()    
+
