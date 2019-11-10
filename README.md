@@ -6,7 +6,7 @@
 
 **But the thing is, Berserk only anonymizes the ``https`` traffic as privoxy can either be configured as a ``https`` or ``http`` proxy.**
 
-**So websites with ``http`` header will not gonna work(c'mmon guys almost every website has ``https`` now.)**
+**So websites with ``http`` header will not gonna work.(c'mmon guys almost every website has ``https`` now.)**
 
 ## Usage:
 
