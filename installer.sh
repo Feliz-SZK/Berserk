@@ -34,3 +34,4 @@ sleep 0.5
 echo " $GREEN$BLUE:::::::: [Done] ::::::::$RESETCOLOR\n "
 sleep 0.5
 echo " $GREEN$BLUE >>>>> Fire up your terminal and type in 'berserk' for usage$RESETCOLOR\n"
+
