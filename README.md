@@ -2,7 +2,7 @@
 
 **Berserk is a commandline tool written in python to increase website traffic**
 
-**Berserk works with privoxy and tor and visit websites with different ips as well as different user-agents**
+**Berserk works with privoxy and tor and visits websites with different ips as well as different user-agents**
 
 ## Usage:
 
