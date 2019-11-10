@@ -32,8 +32,3 @@
  © Salim Zaved Karim
  
  Licensed under the [MIT License](https://github.com/Feliz-SZK/Berserk/blob/master/LICENSE).
-
-
-<span style="color: #f2cf4a; font-family: Babas; font-size: 2em;">Thank You God, for pulling me out of that self loathing Dilemma</span>
-
->To, my Mum. whom I owe literally and metaphorically absolutely everything
