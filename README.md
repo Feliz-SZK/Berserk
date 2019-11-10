@@ -4,9 +4,9 @@
 
 **Berserk works with privoxy and tor and visits websites with different ips as well as different user-agents**
 
-**Berserk only anonymizes the ``https`` traffic as privoxy can either be configured as a ``https`` or ``http`` proxy**
+**But the thing is, Berserk only anonymizes the ``https`` traffic as privoxy can either be configured as a ``https`` or ``http`` proxy**
 
-**so websites with ``http`` header will not gonna work**
+**So websites with ``http`` header will not gonna work(c'mmon guys almost everything's ``https`` now)**
 
 ## Usage:
 
