@@ -1,16 +1,16 @@
 # Berserk
 
-**Berserk is a commandline tool written in python to increase website traffic**
+**Berserk is a commandline tool written in python to increase website traffic.**
 
-**Combining privoxy and tor Berserk visits websites with different ips as well as different user-agents**
+**Combining privoxy and tor Berserk visits websites with different ips as well as different user-agents.**
 
-**But the thing is, Berserk only anonymizes the ``https`` traffic as privoxy can either be configured as a ``https`` or ``http`` proxy**
+**But the thing is, Berserk only anonymizes the ``https`` traffic as privoxy can either be configured as a ``https`` or ``http`` proxy.**
 
-**So websites with ``http`` header will not gonna work(c'mmon guys almost everything's ``https`` now)**
+**So websites with ``http`` header will not gonna work(c'mmon guys almost every website has ``https`` now.)**
 
 ## Usage:
 
-***clone the repo ``cd`` in it and Just Type in**
+***clone the repo ``cd`` in it and Just Type in.**
 
 ``sudo chmod +x installer.sh``
 
@@ -18,7 +18,7 @@
 
 ``sudo ./installer.sh`` ***to install***
 
-**type** ``berserk`` **For usage**
+**type** ``berserk`` **For usage.**
 
 ![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
 
