@@ -4,6 +4,8 @@
 
 **Berserk works with privoxy and tor and visits websites with different ips as well as different user-agents**
 
+**Berserk only anonymizes https traffic as privoxy can either be configured as a ``https`` or ``http`` proxy**
+
 ## Usage:
 
 ***clone the repo ``cd`` in it and Just Type in**
