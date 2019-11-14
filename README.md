@@ -35,14 +35,14 @@
 
 ![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
 
- ## Berserk in action
+## Berserk in action
  
- ![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/Screenshot_20191110_234424.png)
+![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/Screenshot_20191110_234424.png)
  
  
- ## License & copyright
+## License & copyright
  
- © Salim Zaved Karim
+© Salim Zaved Karim
  
- Licensed under the [MIT License](https://github.com/Feliz-SZK/Berserk/blob/master/LICENSE).
+Licensed under the [MIT License](https://github.com/Feliz-SZK/Berserk/blob/master/LICENSE).
  
