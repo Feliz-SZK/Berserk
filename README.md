@@ -35,13 +35,13 @@
 
 <img src="images/output.png" />
 
-![img](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
 
 ## Berserk in action
+
+<img src="images/Screenshot_20191110_234424.png" />
+
  
-![img](https://github.com/Feliz-SZK/Berserk/blob/master/images/Screenshot_20191110_234424.png)
- 
- 
+
 ## License & copyright
  
 © Salim Zaved Karim
