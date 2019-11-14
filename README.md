@@ -1,6 +1,6 @@
 # Berserk
 
-**Berserk is a commandline tool written in python to increase website traffic.**
+**Berserk is a commandline tool written in python2 to increase website traffic.**
 
 **Combining privoxy and tor Berserk visits websites with different ips as well as different user-agents.**
 
