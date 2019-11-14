@@ -33,11 +33,11 @@
 
 **type** ``berserk`` **For usage.**
 
-![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
+![](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
 
 ## Berserk in action
  
-![alt text](https://github.com/Feliz-SZK/Berserk/blob/master/images/Screenshot_20191110_234424.png)
+![](https://github.com/Feliz-SZK/Berserk/blob/master/images/Screenshot_20191110_234424.png)
  
  
 ## License & copyright
