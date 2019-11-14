@@ -33,6 +33,8 @@
 
 **type** ``berserk`` **For usage.**
 
+<img src="images/output.png" />
+
 ![img](https://github.com/Feliz-SZK/Berserk/blob/master/images/output.png)
 
 ## Berserk in action
