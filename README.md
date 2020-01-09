@@ -23,7 +23,7 @@
 
 ## Usage:
 
-***clone the repo ``cd`` in it and Just Type in.**
+**clone the repo ``cd`` in it and Just Type in.**
 
 ``sudo chmod +x installer.sh``
 
