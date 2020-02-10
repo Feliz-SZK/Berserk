@@ -46,5 +46,5 @@
  
 © Salim Zaved Karim
  
-Licensed under the [MIT License](https://github.com/Feliz-SZK/Berserk/blob/master/LICENSE).
+Licensed under the [GPL-V3.0 License](https://github.com/Feliz-SZK/Berserk/blob/master/LICENSE).
  
